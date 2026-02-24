@@ -249,7 +249,7 @@ function renderAllJobs() {
   for (const job of jobs) {
     const div = document.createElement("div");
 
-    div.className = "border p-8 rounded-2xl";
+    div.className = "border p-8 rounded-2xl space-y-4";
 
     div.innerHTML = `
         <div class="flex justify-between">
@@ -278,8 +278,8 @@ function renderAllJobs() {
                 <div><p class="description">${job.description}</p></div>
                 <!-- status controler btn -->
                 <div class="flex gap-4">
-                    <button class="interviewBtn" class="border border-green-500 text-green-500 py-1.5 px-3 rounded-[4px]">interview</button>
-                    <button class="rejectedBtn"  class="border border-red-500 text-red-500 py-1.5 px-3 rounded-[4px]">Rejected</button>
+                    <button  class="interviewBtn border border-green-500 text-green-500 py-1.5 px-3 rounded-[4px]">interview</button>
+                    <button  class="rejecteedBtn border border-red-500 text-red-500 py-1.5 px-3 rounded-[4px]">Rejected</button>
                 </div>
                `;
     container.appendChild(div);
@@ -294,8 +294,7 @@ function renderInterview() {
 
   for (let interview of interviewJobs) {
     let div = document.createElement("div");
-
-    // div.className = 'border border-black p-8 rounded-[8px] space-y-3.5';
+    div.className = "border p-8 rounded-2xl space-y-4";
 
     div.innerHTML = `
     <!-- head -->
@@ -325,8 +324,8 @@ function renderInterview() {
                 <div><p class="description">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p></div>
                 <!-- status controler btn -->
                 <div class="flex gap-4">
-                    <button class="interviewBtn" class="border border-green-500 text-green-500 py-1.5 px-3 rounded-[4px]">interview</button>
-                    <button class="rejectedBtn"  class="border border-red-500 text-red-500 py-1.5 px-3 rounded-[4px]">Rejected</button>
+                    <button  class="interviewBtn border border-green-500 text-green-500 py-1.5 px-3 rounded-[4px]">interview</button>
+                    <button class="interviewBtn border border-red-500 text-red-500 py-1.5 px-3 rounded-[4px]">Rejected</button>
                 </div>
     `;
     interviewCards.appendChild(div);
@@ -341,8 +340,7 @@ function renderRejected() {
 
   for (let reject of rejectedJobs) {
     let div = document.createElement("div");
-
-    // div.className = 'border border-black p-8 rounded-[8px] space-y-3.5';
+    div.className = "border p-8 rounded-2xl space-y-4";
 
     div.innerHTML = `
     <!-- head -->
@@ -372,8 +370,8 @@ function renderRejected() {
                 <div><p class="description">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p></div>
                 <!-- status controler btn -->
                 <div class="flex gap-4">
-                    <button class="interviewBtn" class="border border-green-500 text-green-500 py-1.5 px-3 rounded-[4px]">interview</button>
-                    <button class="rejectedBtn"  class="border border-red-500 text-red-500 py-1.5 px-3 rounded-[4px]">Rejected</button>
+                    <button class="interviewBtn border border-green-500 text-green-500 py-1.5 px-3 rounded-[4px]">interview</button>
+                    <button   class="interviewBtn border border-red-500 text-red-500 py-1.5 px-3 rounded-[4px]">Rejected</button>
                 </div>
     `;
     rejectedCards.appendChild(div);
@@ -384,6 +382,6 @@ function renderRejected() {
 // delete function add
 function deleteCard(id){
    const card = button.parentNode.parentNode;
-   card.remove();
+   card.remove(id);
 }
 deleteCard(id)
