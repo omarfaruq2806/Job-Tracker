@@ -305,7 +305,7 @@ function renderInterview() {
                         <h3 class="position text-gray-500">React Native Developer</h3>
                     </div>
                     <!-- delete btn -->
-                     <div class="deleteBtn">
+                     <div id="deleteBtn" onclick="deleteCard('deleteBtn')" class="deleteBtn">
                         <button><img src="./img/Group 1.png" alt=""></button>
                      </div>
                 </div>
@@ -352,7 +352,7 @@ function renderRejected() {
                         <h3 class="position text-gray-500">React Native Developer</h3>
                     </div>
                     <!-- delete btn -->
-                     <div class="deleteBtn">
+                     <div id="deleteBtn" onclick="deleteCard('deleteBtn')" class="deleteBtn">
                         <button><img src="./img/Group 1.png" alt=""></button>
                      </div>
                 </div>
@@ -379,3 +379,11 @@ function renderRejected() {
     rejectedCards.appendChild(div);
   }
 }
+
+
+// delete function add
+function deleteCard(id){
+   const card = button.parentNode.parentNode;
+   card.remove();
+}
+deleteCard(id)
