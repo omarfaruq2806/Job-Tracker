@@ -92,10 +92,10 @@ const jobs = [
 ];
 
 // interview tab
-const interviewJobs = [];
+let interviewJobs = [];
 
 // rejected tab
-const rejectedJobs = [];
+let rejectedJobs = [];
 
 // tab btn
 const allFilterBtn = document.getElementById("filter-all-btn");
@@ -147,7 +147,7 @@ function toggle(id) {
     // allCards.classList.remove("hidden");
     interviewCards.classList.add("hidden");
     rejectedCards.classList.add("hidden");
-    renderAllJobs()
+    renderAllJobs();
   } else if (id == "filter-interview-btn") {
     interviewCards.classList.remove("hidden");
     rejectedCards.classList.add("hidden");
@@ -279,7 +279,7 @@ function renderAllJobs() {
                 <!-- status controler btn -->
                 <div class="flex gap-4">
                     <button  class="interviewBtn border border-green-500 text-green-500 py-1.5 px-3 rounded-[4px]">interview</button>
-                    <button  class="rejecteedBtn border border-red-500 text-red-500 py-1.5 px-3 rounded-[4px]">Rejected</button>
+                    <button  class="rejectedBtn border border-red-500 text-red-500 py-1.5 px-3 rounded-[4px]">Rejected</button>
                 </div>
                `;
     container.appendChild(div);
@@ -378,10 +378,12 @@ function renderRejected() {
   }
 }
 
-
 // delete function add
-function deleteCard(id){
-   const card = button.parentNode.parentNode;
-   card.remove(id);
-}
-deleteCard(id)
+mainContainer.addEventListener("click", function (event) {
+  if (event.target.closest(".deleteBtn")) {
+    const card = event.target.closest(".border");
+    card.remove();
+
+    calculateCount();
+  }
+});
