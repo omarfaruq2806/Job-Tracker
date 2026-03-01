@@ -7,7 +7,8 @@
   </head>
   <body class="bg-[#e1dbdbf4]">
 
-    <main class="w-250 mx-auto border border-b-black ">
+    <main class="w-250 mx-auto ">
+      <h1 class="font-bold text-3xl pt-6">Job Application Tracker</h1>
       <header class="flex gap-5 pt-6">
         <div class="flex flex-col rounded-2xl p-6 bg-white w-full gap-2">
           <p class="text-2xl font-semibold">Total</p>
@@ -23,12 +24,24 @@
         </div>
       </header>
 
-      <section class="allSection">
+      <section class="pt-6 space-y-5">
+        <div class="flex justify-between">
+          <h1 class="text-2xl font-bold">Available Jobs</h1>
+          <p class="font-semibold"><span></span> Jobs</p>
+        </div>
+        <div class="mt-5 flex flex-row  gap-4">
+          <button class=" px-4 font-medium py-2 bg-white text-black rounded-md">All</button>
+          <button class=" px-4 font-medium py-2 bg-white rounded-md">Interview</button>
+          <button class=" px-4 font-medium py-2 bg-white rounded-md">Rejected</button>
+        </div>
+      </section>
+
+      <section class="allSection mt-5 space-y-5">
         <!-- card-1 -->
-         <div class="bg-white border rounded-xl p-6 shadow-sm">
-      <div class="flex justify-between items-start">
+         <div class="bg-white  rounded-xl p-6 ">
+         <div class="flex justify-between items-start">
         <div>
-          <h2 class="text-xl font-semibold text-blue-900">
+          <h2 class="text-xl font-semibold text-black ">
             Mobile First Corp
           </h2>
           <p class="text-gray-600 mt-1">React Native Developer</p>
@@ -37,7 +50,7 @@
             Remote • Full-time • $130,000 - $175,000
           </p>
 
-          <span class="inline-block mt-4 px-4 py-1 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
+          <span class="inline-block mt-4 px-4 font-medium py-1 text-sm font-medium bg-blue-100 text-blue-800 rounded-md">
             NOT APPLIED
           </span>
 
@@ -56,7 +69,7 @@
           </div>
         </div>
 
-        <button class="p-2 rounded-full border text-gray-400 hover:bg-gray-100">
+        <button class=" rounded-full border text-gray-400 hover:bg-gray-100">
           <img src="./img/Group 1.png" alt="">
         </button>
       </div>
@@ -70,6 +83,15 @@
 
       <!-- filter reject section -->
       <section class="rejectedSection hidden"></section>
+
+      <!-- empty section -->
+       <section class=" hidden ">
+        <div class="space-y-4 flex flex-col justify-center items-center p-8  bg-white  rounded-2xl">
+                <img src="./img/jobs.png" alt="" class="mx-auto">
+                <h1 class="text-2xl font-bold ">No Jobs Available</h1>
+                <p class="text-black">Check back soon for new job opportunities</p>
+            </div>
+       </section>
 
     </main>
 
