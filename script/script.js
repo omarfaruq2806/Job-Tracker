@@ -40,3 +40,28 @@ function switchTab(tab) {
   }
 }
 switchTab(currentTab);
+
+// count update
+const totalCount = document.getElementById("totalCount");
+const interviewCount = document.getElementById("interviewCount");
+const rejectCount = document.getElementById("rejectCount");
+
+document
+  .getElementById("jobsContainer")
+  .addEventListener("click", function (event) {
+    const target = event.target;
+    const card = target.closest(".card");
+    const status = card.querySelector(".status");
+
+    if (target.classList.contains("interview")) {
+      status.innerText = "Interviewed";
+      interviewSection.appendChild(card);
+    }
+    if (target.classList.contains("reject")) {
+      status.innerText = "Rejected";
+      rejectedSection.appendChild(card);
+    }
+    if (target.classList.contains("delete")) {
+      //
+    }
+  });
